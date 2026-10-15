@@ -1,6 +1,11 @@
 # PostScript3
 Testing the creation of a PostScript Type 3 font for the PSAT project.
 
+### Lancement 
+
+`npm init -y`
+`npm install opentype.js`
+`node main.js`
 
 ### Method
 
@@ -8,8 +13,8 @@ Using the opentype.js library in JavaScript/Node to try and create a personalize
 
 CAUTION : opentype.js create modern font, in .otf, whereas PostScript3 should be a .pfa. We can use fontforge to modify formats.
 
-### What Lisa is trying
-- 15/10 : Creation of letter a, adding noise
+### What Lisa is trying to do
+- 15/10 : Creation of letter a and font
 
 ### Docs
 - https://www.npmjs.com/package/opentype.js

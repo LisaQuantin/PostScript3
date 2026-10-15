@@ -1,0 +1,10 @@
+<!-- Visuel du glyphe 'A' -->
+
+<svg width="400" height="400">
+  <path d="M 100,350 L 200,50 L 300,350 M 140,250 L 260,250" 
+        fill="none" 
+        stroke="black" 
+        stroke-width="15" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
