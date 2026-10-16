@@ -16,6 +16,9 @@ CAUTION : opentype.js create modern font, in .otf, whereas PostScript3 should be
 ### What Lisa is trying to do
 - 15/10 : Creation of letter a and font
 
+### What is Lucie doing
+- 16/10 : getting started with Postscript language
+
 ### Docs
 - https://www.npmjs.com/package/opentype.js
 - https://fontforge.org/docs/index.html
