@@ -1,0 +1,94 @@
+%!
+
+%Test random font
+
+100 dict def begin  % Create a dictionary for the font
+/Name /FontTest def
+/FontType 3 def  % Type 3 font
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def  % Transformation matrix for the font
+/FontBBox [0 0 100 100] readonly def  % Bounding box in which all glyphs fit
+/Encoding 256 array def  % Define the encoding array
+
+%/Un;queID 1314159 def
+%/XUID [ 1000000 1314159 ] readonly def
+%/LanguageLevel 2 def
+
+
+/FontInfo 9 dict dup begin
+    % /version (001.000) readonly def
+    % /Notice (Copyright (c) 1995, 1996 by Bernard Desruisseaux) readonly def
+    % IFamilyName (MetamorFont) readonly def
+    % /Ful1Name (MetamorFont Regular) readonly def
+    /Weight (Regular) readonly def
+    /ItalicAngle 0.0 def
+    /isFixedPitch false def
+    /UnderlinePosition -150 def
+    /UnderlineThickness 50 def X [Bold: 80]
+end readonly def
+
+/FontParams 100 diet dup begin
+% ~-[ Cenerals ]-----------------------------------------------------
+    /DynamicFont true def  %setcharwi dth or setcachedevice
+    /RandomFont true def  %Use Oisto~harPo1ygon?
+    /UseConstraints true def  %Use constraints dietionary?
+    /UseSections true def  %Use sections?
+    /UseMetrics dup where  %Use FontMetrics dietionary?
+        { pop UseMetrics } 
+        { true } ifelse def 
+    /NullGlyph false def  % Most glyphs are non-null
+
+%--[ Ju.pyFont ]----------------------------------------------------
+    /JumpyFont false def % Characters go up and down
+    /JumpyFactor 50 def % by +- JumpyFaetor
+    /JumpsRelative true def % Relative jumps?
+    /LastJump 0 def % Last jump value
+
+ def " Most glyphs are non-nu11
+
+%--[ Painting Parameters]
+    /PaintType 1 def % 0:fill.l:stroke.2:stroke.3:null
+    /StrokeWidth 50 def %Stroke width [Bold: 80]
+    /LineJoin 1 def 
+    /Linecap 1 def
+    /MiterLimit 2.S def
+
+%--[ Pen Parameters]
+    /UsePen true def %use calligraphie pen effect
+    /TickThinRatio 5 def %pen ratio to tick to thin
+    /StressAngle 120 def %Pen stress angle
+
+%--[ Randomization Parameters ]-------------------------------------
+    /Craziness 0 def % Haphazard variation
+    { /-dx /-dy /+dx /+dy } % Independant haphazard var.
+        { Craziness def } forall 
+    /RestoreWidth true def %Restore Width after transe
+    /RestoreHeight true def % Restore Height after transe
+
+
+  % Define character mappings
+  Encoding 65 /A put
+  Encoding 66 /B put
+  Encoding 67 /C put
+
+  % Define each character's drawing procedure
+  /CharProcs 3 dict def
+  CharProcs begin
+    /A {newpath 10 0 moveto 50 100 lineto 90 0 lineto closepath} def
+    /B {newpath 10 0 moveto 10 100 lineto 50 100 50 50 50 0 curveto closepath} def
+    /C {newpath 100 75 moveto 50 100 25 75 25 25 curveto 25 25 50 0 100 25 curveto closepath} def
+  end
+
+  % Define how each character is built
+  /BuildGlyph {
+    exch begin
+    CharProcs exch get exec
+    end
+  } def
+
+  % Define how to show each character
+  /BuildChar {
+    1 0 0 1 0 0 setfontmatrix
+    BuildGlyph
+  } def
+end
+

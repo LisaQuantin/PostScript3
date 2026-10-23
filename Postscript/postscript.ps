@@ -21,3 +21,14 @@
 100 100 moveto
 %(ABC) 50 yshow
 
+/FontTest findfont 25 scalefont setfont  % Select the font and scale it
+50 150 moveto  % Move to starting position on the page
+(A) show
+70 150 moveto  % Adjust position for next character
+(B) show
+90 150 moveto  % Adjust position for next character
+(C) show
+
+showpage  % Render the page
+
+
