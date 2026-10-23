@@ -1,0 +1,23 @@
+%Fichier postscript. Pour le moment, surtout des tests d'affichages pour comprendre
+
+/FSD {findfont exch scalefont def} bind def % In the document prolog: define
+/SMS {setfont moveto show} bind def % some useful procedures
+/MS {moveto show} bind def
+/ML {setfont moveto yshow} bind def
+/F1 10 /Helvetica FSD % At the start of the script: set up
+/F2 10 /Helvetica-Oblique FSD % commonly used font dictionaries
+/F3 10 /Helvetica-Bold FSD
+
+%This is my test.) 10 90 50 F1 ML %yshow
+(This is in Helvetica.) 10 78 F1 SMS % In the body of the script: show
+(And more in Helvetica.) 10 66 MS % some text
+(This is in Helvetica-Oblique.) 10 54 F2 SMS
+(This is in Helvetica-Bold.) 10 42 F3 SMS
+(And more Helvetica-Bold.) 10 30 MS
+%20 10 8#040 (Wide word spacing) widthshow F2
+
+/Helvetica findfont
+12 scalefont setfont
+100 100 moveto
+%(ABC) 50 yshow
+
